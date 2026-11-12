@@ -1,0 +1,26 @@
+name: Workflow test
+on:
+   push:
+     branches: [test]
+
+jobs:
+  compile-test-linux
+     runs-on: ubuntu-latest
+      steps:
+        - name: descargar repositorio
+        - uses: actions/checkout@v6
+        
+        -name: Compilar el fichero
+        -run: make
+        -run: ./conversor c2f 100
+
+ compile-test-mac
+     runs-on: macOS-latest
+      steps:
+        - name: descargar repositorio
+        - uses: actions/checkout@v6
+
+        -name: Compilar el fichero
+        -run: make
+        -run: ./conversor c2f 100
+
